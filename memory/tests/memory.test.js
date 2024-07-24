@@ -1,4 +1,4 @@
-import { loadFeature, defineFeature, pending } from 'jest-cucumber'
+import { loadFeature, defineFeature } from 'jest-cucumber'
 import * as steps from './steps/memory.steps'
 
 const feature = loadFeature('./tests/features/memory.feature')
@@ -20,7 +20,7 @@ defineFeature(feature, (test) => {
     })
 
     then('all cards should be unflipped', () => {
-      pending()
+      expect(steps.allCardsUnflipped()).toBe(true)
     })
   })
 

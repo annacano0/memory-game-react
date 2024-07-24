@@ -23,3 +23,10 @@ export function boardDimensionsValidation (rows, cols) {
   if (cards.length === rows * cols) validBoard = true
   return validBoard
 }
+
+export function allCardsUnflipped() {
+  let cards = screen.getAllByTestId('board-card', { exact: false });
+  return cards.every(card => {
+    return card.classList.contains('unflipped');
+  });
+}
