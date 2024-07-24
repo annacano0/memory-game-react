@@ -30,15 +30,15 @@ defineFeature(feature, (test) => {
     })
 
     given('the player loads the following mock data', (mockData) => {
-      pending()
+      steps.setMockData(mockData)
     })
 
     when(/^the player right clicks on the card \("(.*)", "(.*)"\)$/, (rowPosition, colPosition) => {
-      pending()
+      steps.rightClickCard(rowPosition, colPosition)
     })
 
-    then(/^the card \("(.*)", "(.*)"\) should be flipped$/, (rowPos, colPos) => {
-      pending()
+    then(/^the card \("(.*)", "(.*)"\) should be flipped$/, (rowPosition, colPosition) => {
+      expect(steps.checkCardIsFlipped(rowPosition, colPosition)).toBe(true)
     })
   })
 
@@ -59,7 +59,7 @@ defineFeature(feature, (test) => {
       pending()
     })
 
-    then(/^the card \("(.*)", "(.*)"\) should be flipped$/, (rowPos, colPos) => {
+    then(/^the card \("(.*)", "(.*)"\) should be flipped$/, (rowPosition, colPosition) => {
       pending()
     })
   })

@@ -30,3 +30,34 @@ export function allCardsUnflipped() {
     return card.classList.contains('unflipped');
   });
 }
+
+export function setMockData(mockData) {
+    let data=mockData.trim()
+    fireEvent.keyDown(screen.getByTestId('app'), {
+      key: 'm',
+      keyCode: 77,
+      which: 77,
+      code: 'KeyM',
+      location: 0,
+      altKey: false,
+      ctrlKey: true,
+      metaKey: false,
+      shiftKey: false,
+      repeat: false
+    })
+
+    let textInput = screen.getByTestId('mock-data-input')
+    let submitButton = screen.getByTestId('mock-data-submit')
+    fireEvent.change(textInput, { target: { value: data}})
+    fireEvent.click(submitButton)
+}
+
+export function rightClickCard(rowPosition, colPosition){
+  let card = screen.getByTestId("board-card"+ rowPosition +"-"+colPosition)
+  fireEvent.click(card)
+}
+
+export function checkCardIsFlipped(rowPosition, colPosition){ //TODO: to be implemented
+  let card =  screen.getByTestId("board-card"+ rowPosition +"-"+colPosition)
+  return card.classList.contains("unflipped")
+}
