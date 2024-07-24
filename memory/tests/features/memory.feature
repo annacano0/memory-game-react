@@ -58,7 +58,7 @@ Feature: Memory
         And the player right clicks on the card ("1", "1")    
         Then the card ("1", "1") should be flipped
 
-    Scenario: Flipping two cards 
+    Scenario: Flipping two cards - Default scenario
         Given the player loads the following mock data
         """
         | 2 | 1 |
@@ -79,7 +79,7 @@ Feature: Memory
         Then the card ("2", "1") should be flipped
         And the card ("1", "1") and the card ("1", "2") should be unflipped
 
-    Scenario: Flipping two cards - Fipping other cards after a match 
+    Scenario:Flipping two cards - Flipping other cards after a match
         Given the player loads the following mock data
         """
         | 2 | 1 |
@@ -88,4 +88,4 @@ Feature: Memory
         And the card ("1", "1") and the card ("2", "2") are unflipped
         When the player right clicks on the card ("2", "1")  
         Then the card ("2", "1") should be flipped
-        And the card ("1", "1") and the card ("1", "2") should be flipped
+        Then the card ("1", "1") and the card ("1", "2") should be flipped

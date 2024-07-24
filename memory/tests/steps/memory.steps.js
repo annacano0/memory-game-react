@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Page from '../../src/app/page'
-import Game from '../..src/components/Game'
+import Game from '../../src/components/Game'
 
 //sample tests
 export function openThePage () {
@@ -17,7 +17,7 @@ export function openTheGame() {
   render(<Game/>)
 }
 
-export function boardDimensionValidation (rows, cols) {
+export function boardDimensionsValidation (rows, cols) {
   let validBoard= false
   const cards = screen.getAllByTestId('board-card', { exact: false })
   if(cards.length === rows * cols) validBoard= true 
