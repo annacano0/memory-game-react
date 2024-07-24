@@ -6,10 +6,10 @@ const feature = loadFeature('./tests/features/memory.feature')
 defineFeature(feature, (test) => {
   test('Starting the game - Default board of 3x4', ({ given, then }) => {
     given('the player opens the game', () => {
-      pending()
+      steps.openTheGame()
     })
     then(/^the board should have "(.*)" rows and "(.*)" columns$/, (numberOfRows, numberOfCols) => {
-      pending()
+      expect(steps.boardDimensionsValidation(numberOfRows, numberOfCols)).toBe(true)
     })
   })
 
