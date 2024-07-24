@@ -8,109 +8,132 @@ defineFeature(feature, (test) => {
     given('the player opens the game', () => {
       steps.openTheGame()
     })
+
     then(/^the board should have "(.*)" rows and "(.*)" columns$/, (numberOfRows, numberOfCols) => {
       expect(steps.boardDimensionsValidation(numberOfRows, numberOfCols)).toBe(true)
     })
   })
 
-  test('Starting the game - All cards should be unflipped', ({ given, then }) => {
+  test('Starting the game - All cards should be unflipped', ({ given, then, pending }) => {
     given('the player opens the game', () => {
-      pending()
+      steps.openTheGame()
     })
+
     then('all cards should be unflipped', () => {
       pending()
     })
   })
 
-  test('Flipping a card - Clicking over a card', ({ given, when, then }) => {
+  test('Flipping a card - Clicking over a card', ({ given, when, then, pending }) => {
     given('the player opens the game', () => {
-      pending()
+      steps.openTheGame()
     })
+
     given('the player loads the following mock data', (mockData) => {
       pending()
     })
-    when(/^the player right clicks on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+
+    when(/^the player right clicks on the card \("(.*)", "(.*)"\)$/, (rowPosition, colPosition) => {
       pending()
     })
-    then(/^the card \("(.*)","(.*)"\) should be flipped$/, (rowPos, colPos) => {
+
+    then(/^the card \("(.*)", "(.*)"\) should be flipped$/, (rowPos, colPos) => {
       pending()
     })
   })
 
-  test('Flipping a card already flipped - Clicking over a card already flipped', ({ given, and, then }) => {
+  test('Flipping a card already flipped - Clicking over a card already flipped', ({ given, and, then, pending }) => {
     given('the player opens the game', () => {
-      pending()
+      steps.openTheGame()
     })
+
     given('the player loads the following mock data', (mockData) => {
       pending()
     })
-    and(/^the player right clicks on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+
+    and(/^the player right clicks on the card \("(.*)", "(.*)"\)$/, (rowPosition, colPosition) => {
       pending()
     })
-    and(/^the player right clicks on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+
+    and(/^the player right clicks on the card \("(.*)", "(.*)"\)$/, (rowPosition, colPosition) => {
       pending()
     })
-    then(/^the card \("(.*)","(.*)"\) should be flipped$/, (rowPos, colPos) => {
+
+    then(/^the card \("(.*)", "(.*)"\) should be flipped$/, (rowPos, colPos) => {
       pending()
     })
   })
 
-  test('Flipping two cards', ({ given, and, when, then }) => {
+  test('Flipping two cards - Default scenario', ({ given, and, when, then, pending }) => {
     given('the player opens the game', () => {
-      pending()
+      steps.openTheGame()
     })
+
     given('the player loads the following mock data', (mockData) => {
       pending()
     })
-    and(/^the player right clicks on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+
+    and(/^the player right clicks on the card \("(.*)", "(.*)"\)$/, (rowPosition, colPosition) => {
       pending()
     })
-    when(/^the player right clicks on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+
+    when(/^the player right clicks on the card \("(.*)", "(.*)"\)$/, (rowPosition, colPosition) => {
       pending()
     })
-    then(/^the card \("(.*)","(.*)"\) and the card \("(.*)","(.*)"\) should be flipped$/, (card1RowPos, card1ColPos, card2RowPos, card2ColPos) => {
+
+    then(/^the card \("(.*)", "(.*)"\) and the card \("(.*)", "(.*)"\) should be flipped$/, (card1RowPos, card1ColPos, card2RowPos, card2ColPos) => {
       pending()
     })
   })
 
-  test('Flipping two cards - Unflipping after not matching', ({ given, and, when, then }) => {
+  test('Flipping two cards - Unflipping after not matching', ({ given, and, when, then, pending }) => {
     given('the player opens the game', () => {
-      pending()
+      steps.openTheGame()
     })
+
     given('the player loads the following mock data', (mockData) => {
       pending()
     })
-    and(/^the card \("(.*)","(.*)"\) and the card \("(.*)","(.*)"\) are unflipped$/, (card1RowPos, card1ColPos, card2RowPos, card2ColPos) => {
+
+    and(/^the card \("(.*)", "(.*)"\) and the card \("(.*)", "(.*)"\) are unflipped$/, (card1RowPos, card1ColPos, card2RowPos, card2ColPos) => {
       pending()
     })
-    when(/^the player right clicks on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+
+    when(/^the player right clicks on the card \("(.*)", "(.*)"\)$/, (rowPosition, colPosition) => {
       pending()
     })
-    then(/^the card \("(.*)","(.*)"\) should be flipped$/, (rowPos, colPos) => {
+
+    then(/^the card \("(.*)", "(.*)"\) should be flipped$/, (rowPos, colPos) => {
       pending()
     })
-    and(/^the card \("(.*)","(.*)"\) and the card \("(.*)","(.*)"\) should be unflipped$/, (card1RowPos, card1ColPos, card2RowPos, card2ColPos) => {
+
+    and(/^the card \("(.*)", "(.*)"\) and the card \("(.*)", "(.*)"\) should be unflipped$/, (card1RowPos, card1ColPos, card2RowPos, card2ColPos) => {
       pending()
     })
   })
 
-  test('Flipping two cards - Fipping other cards after a match ', ({ given, and, when, then }) => {
+  test('Flipping two cards - Flipping other cards after a match', ({ given, and, when, then, pending }) => {
     given('the player opens the game', () => {
-      pending()
+      steps.openTheGame()
     })
+
     given('the player loads the following mock data', (mockData) => {
       pending()
     })
-    and(/^the card \("(.*)","(.*)"\) and the card \("(.*)","(.*)"\) are unflipped$/, (card1RowPos, card1ColPos, card2RowPos, card2ColPos) => {
+
+    and(/^the card \("(.*)", "(.*)"\) and the card \("(.*)", "(.*)"\) are unflipped$/, (card1RowPos, card1ColPos, card2RowPos, card2ColPos) => {
       pending()
     })
-    when(/^the player right clicks on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+
+    when(/^the player right clicks on the card \("(.*)", "(.*)"\)$/, (rowPosition, colPosition) => {
       pending()
     })
-    then(/^the card \("(.*)","(.*)"\) should be flipped$/, (rowPos, colPos) => {
+
+    then(/^the card \("(.*)", "(.*)"\) should be flipped$/, (rowPos, colPos) => {
       pending()
     })
-    and(/^the card \("(.*)","(.*)"\) and the card \("(.*)","(.*)"\) should be flipped$/, (card1RowPos, card1ColPos, card2RowPos, card2ColPos) => {
+
+    and(/^the card \("(.*)", "(.*)"\) and the card \("(.*)", "(.*)"\) should be flipped$/, (card1RowPos, card1ColPos, card2RowPos, card2ColPos) => {
       pending()
     })
   })
